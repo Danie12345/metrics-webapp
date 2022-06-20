@@ -10,13 +10,13 @@
 - Redux
 - Jest and react-testing-library
 - Axios
-- Some API
+- OpenWeatherMap's Air Pollution API
+- REST Countries API
 - Netlify
 - Gitflow
 
 ## Live Demos
-- [Netlify](empty link)
-- [Heroku](empty link)
+- [Netlify](https://62b0e11710168b120ba04087--strong-croquembouche-21dba9.netlify.app/)
 
 
 ## Getting Started
