@@ -36,7 +36,8 @@ export default function reducer(state = [], action) {
 export { getCountries, removeCountries };
 
 // {
-//   name: { common: 'Chile', official: 'Republic of Chile', nativeName: { spa: { official: 'República de Chile', common: 'Chile' } } },
+//   name: { common: 'Chile', official: 'Republic of Chile', nativeName:
+// { spa: { official: 'República de Chile', common: 'Chile' } } },
 //   tld: ['.cl'],
 //   cca2: 'CL',
 //   ccn3: '152',
@@ -61,7 +62,8 @@ export { getCountries, removeCountries };
 //   area: 756102.0,
 //   demonyms: { eng: { f: 'Chilean', m: 'Chilean' }, fra: { f: 'Chilienne', m: 'Chilien' } },
 //   flag: '\uD83C\uDDE8\uD83C\uDDF1',
-//   maps: { googleMaps: 'https://goo.gl/maps/XboxyNHh2fAjCPNn9', openStreetMaps: 'https://www.openstreetmap.org/relation/167454' },
+//   maps: { googleMaps: 'https://goo.gl/maps/XboxyNHh2fAjCPNn9',
+// openStreetMaps: 'https://www.openstreetmap.org/relation/167454' },
 //   population: 19116209,
 //   gini: { 2017: 44.4 },
 //   fifa: 'CHI',
@@ -69,7 +71,8 @@ export { getCountries, removeCountries };
 //   timezones: ['UTC-06:00', 'UTC-04:00'],
 //   continents: ['South America'],
 //   flags: { png: 'https://flagcdn.com/w320/cl.png', svg: 'https://flagcdn.com/cl.svg' },
-//   coatOfArms: { png: 'https://mainfacts.com/media/images/coats_of_arms/cl.png', svg: 'https://mainfacts.com/media/images/coats_of_arms/cl.svg' },
+//   coatOfArms: { png: 'https://mainfacts.com/media/images/coats_of_arms/cl.png', svg:
+// 'https://mainfacts.com/media/images/coats_of_arms/cl.svg' },
 //   startOfWeek: 'monday',
 //   capitalInfo: { latlng: [-33.45, -70.67] },
 //   postalCode: { format: '#######', regex: '^(\\d{7})$' },
