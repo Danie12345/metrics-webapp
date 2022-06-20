@@ -1,14 +1,14 @@
 import WorldService from '../../services/WorldService';
 
 const GET_POLLUTION = 'metrics/pollution/GET_POLLUTION';
-const CLEAR = 'metrics/pollution/CLEAR'
+const CLEAR = 'metrics/pollution/CLEAR';
 
 async function getCurrentPollution(dispatch, getState) {
   const { pollution: currentData } = getState();
 
   if (Object.keys(currentData).length === 0) {
     const { data } = await WorldService.getCurrentPollutionData();
-  
+
     dispatch({ type: GET_POLLUTION, payload: data });
   }
 }
