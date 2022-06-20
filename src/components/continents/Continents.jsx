@@ -38,6 +38,7 @@ const Continents = () => {
           <li className="country" key={country.name.common}>
             <NavLink to={country.name.common} className="nav-link">
               <span>{country.name.common.toUpperCase()}</span>
+              <img style={{ width: '120px', height: 'auto' }} alt={`${country.name}'s flag.`} src={country.flag} />
             </NavLink>
           </li>
         ))}

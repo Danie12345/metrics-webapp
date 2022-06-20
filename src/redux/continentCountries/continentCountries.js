@@ -12,7 +12,7 @@ async function getCountries(dispatch, getState, continent) {
       region: country.region,
       coords: country.latlng,
       population: country.population,
-      map: country.maps.googleMaps,
+      flag: country.flags.svg,
     }));
     dispatch({ type: GET_COUNTRIES, payload: countries });
   }
