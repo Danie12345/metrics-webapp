@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import { getCountries } from '../../redux/continentCountries/continentCountries';
 
 import store from '../../redux/configureStore';
@@ -35,7 +36,9 @@ const Continents = () => {
       <ul className="country-list">
         {countries && countries.map((country) => (
           <li className="country" key={country.name.common}>
-            <div>{country.name.common}</div>
+            <NavLink to={country.name.common} className="nav-link">
+              <span>{country.name.common.toUpperCase()}</span>
+            </NavLink>
           </li>
         ))}
       </ul>
