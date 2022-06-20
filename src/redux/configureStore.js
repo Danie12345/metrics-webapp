@@ -1,10 +1,10 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
-import stuff from './template-reducer/template-reducer';
+import pollution from './currentPollution/currentPollution';
 
 const rootReducer = combineReducers({
-  stuff,
+  pollution,
 });
 const store = createStore(rootReducer, applyMiddleware(thunk, logger));
 
