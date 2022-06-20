@@ -13,7 +13,7 @@ async function getCurrentPollution(dispatch, getState) {
   }
 }
 
-function removeData(dispatch) {
+function removePollutionData(dispatch) {
   dispatch({ type: CLEAR });
 }
 
@@ -28,7 +28,7 @@ export default function reducer(state = [], action) {
   }
 }
 
-export { getCurrentPollution, removeData };
+export { getCurrentPollution, removePollutionData };
 
 // {
 //   "coord": [
