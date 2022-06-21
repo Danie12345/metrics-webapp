@@ -26,7 +26,7 @@ const Continents = () => {
 
   useEffect(() => {
     getCountries(dispatch, store.getState, continent);
-    setCountry(dispatch, '');
+    setCountry(dispatch, {});
   }, []);
   return (
     <div className="countries">
@@ -43,14 +43,14 @@ const Continents = () => {
       </select>
       <ul className="country-list">
         {countries && countries.map((country) => (
-          <li className="country" key={country.name.common}>
+          <li className="country" key={country.name}>
             <NavLink
-              to={`/continents/country/${unidecode(country.name.common.replace(/ /gi, '-'))}`}
+              to={`/continents/country/${unidecode(country.name.replace(/ /gi, '-'))}`}
               className="nav-link"
-              onClick={() => countrySelect(country.name.common)}
+              onClick={() => countrySelect(country)}
             >
-              <span>{country.name.common.toUpperCase()}</span>
-              <img style={{ width: '120px', height: 'auto' }} alt={`${country.name.common}'s flag.`} src={country.flag} />
+              <span>{country.name.toUpperCase()}</span>
+              <img style={{ width: '120px', height: 'auto' }} alt={`${country.name}'s flag.`} src={country.flag} />
             </NavLink>
           </li>
         ))}

@@ -1,30 +1,26 @@
 import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { setCountry } from '../../redux/country/country';
 
-const Country = (props) => {
+const Country = () => {
   const dispatch = useDispatch();
+  const country = useSelector((state) => state.country);
   const countrySelect = (country) => {
     setCountry(dispatch, country);
   };
-  const { name } = props;
   return (
     <div className="country">
       <NavLink
         to="/continents"
         className="nav-link"
-        onClick={() => { countrySelect(''); }}
+        onClick={() => { countrySelect({}); }}
       >
         <span>BACK</span>
       </NavLink>
-      {name}
+      {country.name}
     </div>
   );
-};
-
-Country.propTypes = {
-  name: PropTypes.string.isRequired,
 };
 
 export default Country;

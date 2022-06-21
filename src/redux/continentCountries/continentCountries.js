@@ -8,7 +8,7 @@ async function getCountries(dispatch, getState, continent) {
   if (Object.keys(currentData).length === 0 || currentData.continent !== continent) {
     const { data } = await WorldService.getContinentCountries(continent);
     const countries = data.map((country) => ({
-      name: country.name,
+      name: country.name.common,
       region: country.region,
       coords: country.latlng,
       population: country.population,
