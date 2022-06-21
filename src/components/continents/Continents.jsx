@@ -16,7 +16,7 @@ const Continents = () => {
   const continent = useSelector((state) => state.continent);
   const continents = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
   const continentSelect = (e) => {
-    setCountry(dispatch, '');
+    setCountry(dispatch, {});
     setContinent(dispatch, e.target.value);
     getCountries(dispatch, store.getState, e.target.value);
   };
