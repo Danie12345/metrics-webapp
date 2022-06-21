@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { getCountries } from '../../redux/continentCountries/continentCountries';
+import { setContinent } from '../../redux/continent/continent';
 
 import store from '../../redux/configureStore';
 
@@ -9,10 +10,10 @@ const Continents = () => {
   const dispatch = useDispatch();
 
   const countries = useSelector((state) => state.countries);
+  const continent = useSelector((state) => state.continent);
   const continents = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
-  const [continent, setContinent] = useState('Africa');
   const continentSelect = (e) => {
-    setContinent(e.target.value);
+    setContinent(dispatch, e.target.value);
     getCountries(dispatch, store.getState, e.target.value);
   };
 
