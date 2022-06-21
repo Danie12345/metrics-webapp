@@ -1,9 +1,12 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import unidecode from 'unidecode';
+
 import { getCountries } from '../../redux/continentCountries/continentCountries';
 import { setContinent } from '../../redux/continent/continent';
-
+import { setCountry } from '../../redux/country/country';
+// import Country from '../country/Country';
 import store from '../../redux/configureStore';
 
 const Continents = () => {
@@ -13,14 +16,18 @@ const Continents = () => {
   const continent = useSelector((state) => state.continent);
   const continents = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
   const continentSelect = (e) => {
+    setCountry(dispatch, '');
     setContinent(dispatch, e.target.value);
     getCountries(dispatch, store.getState, e.target.value);
+  };
+  const countrySelect = (country) => {
+    setCountry(dispatch, country);
   };
 
   useEffect(() => {
     getCountries(dispatch, store.getState, continent);
+    setCountry(dispatch, '');
   }, []);
-
   return (
     <div className="countries">
       <select
@@ -37,9 +44,13 @@ const Continents = () => {
       <ul className="country-list">
         {countries && countries.map((country) => (
           <li className="country" key={country.name.common}>
-            <NavLink to={country.name.common} className="nav-link">
+            <NavLink
+              to={`/continents/country/${unidecode(country.name.common.replace(/ /gi, '-'))}`}
+              className="nav-link"
+              onClick={() => countrySelect(country.name.common)}
+            >
               <span>{country.name.common.toUpperCase()}</span>
-              <img style={{ width: '120px', height: 'auto' }} alt={`${country.name}'s flag.`} src={country.flag} />
+              <img style={{ width: '120px', height: 'auto' }} alt={`${country.name.common}'s flag.`} src={country.flag} />
             </NavLink>
           </li>
         ))}
