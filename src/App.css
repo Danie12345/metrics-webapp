@@ -6,10 +6,12 @@ body {
   padding: 0;
   overflow-x: hidden;
   font-family: 'Montserrat', sans-serif;
+  background-color: rgb(67, 105, 178);
 }
 
 a {
   text-decoration: none;
+  color: unset;
 }
 
 ul,

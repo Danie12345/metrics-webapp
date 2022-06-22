@@ -5,6 +5,8 @@ import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 import { setCountry } from '../../redux/country/country';
 import './Nav.css';
 
+const logo = require('../../assets/logo.png');
+
 const Nav = () => {
   const dispatch = useDispatch();
   const [openMenu, setOpenMenu] = useState(false);
@@ -21,16 +23,12 @@ const Nav = () => {
       path: 'continents',
       text: 'Continents',
     },
-    {
-      path: 'empty',
-      text: 'empty',
-    },
   ];
 
   return (
     <nav className="navBar">
       <div className="logo-container">
-        <img alt="Cool logo." className="logo-img" width={60} height={60} />
+        <img src={logo} alt="Cool logo." className="logo-img" width="100%" height="auto" />
         <h1>Air Pollution Ranks</h1>
       </div>
       {openMenu ? (<AiOutlineClose onClick={() => toggleMenu()} className="menu-icon" />) : (<AiOutlineMenu onClick={() => toggleMenu()} className="menu-icon" />)}
@@ -40,7 +38,7 @@ const Nav = () => {
             <NavLink
               to={link.path}
               className="nav-link"
-              onClick={() => { countrySelect(''); }}
+              onClick={() => { countrySelect({}); }}
             >
               <span>{link.text.toUpperCase()}</span>
             </NavLink>
