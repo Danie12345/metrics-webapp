@@ -21,10 +21,6 @@ const Nav = () => {
       path: 'continents',
       text: 'Continents',
     },
-    {
-      path: 'empty',
-      text: 'empty',
-    },
   ];
 
   return (
