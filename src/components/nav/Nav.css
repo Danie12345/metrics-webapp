@@ -6,7 +6,7 @@
   justify-items: center;
   align-items: center;
   box-sizing: border-box;
-  background-color: rgb(67, 105, 178);
+  background-color: transparent;
   position: fixed;
   top: 0;
   z-index: 3;
