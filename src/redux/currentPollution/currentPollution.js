@@ -4,23 +4,26 @@ const GET_POLLUTION = 'metrics/pollution/GET_POLLUTION';
 const CLEAR = 'metrics/pollution/CLEAR';
 
 async function getCurrentPollution(dispatch, getState) {
-  const { pollution: currentData } = getState();
-  if (Object.keys(currentData).length === 0) {
-    const { data } = await WorldService.getCurrentPollutionData();
-    dispatch({ type: GET_POLLUTION, payload: data });
-  }
+  const { country } = getState();
+  const { data } = await WorldService.getCurrentPollutionData(
+    ...country.coords,
+  );
+  const payload = {
+    ...data.coord,
+    composition: data.list[0].components,
+    index: data.list[0].main.aqi,
+  };
+  dispatch({ type: GET_POLLUTION, payload });
 }
 
 function removePollutionData(dispatch) {
   dispatch({ type: CLEAR });
 }
 
-export default function reducer(state = [], action) {
+export default function reducer(state = {}, action) {
   switch (action.type) {
     case GET_POLLUTION:
-      return [action.payload];
-    case CLEAR:
-      return [];
+      return action.payload;
     default:
       return state;
   }
