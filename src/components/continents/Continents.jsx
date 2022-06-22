@@ -8,6 +8,8 @@ import { setContinent } from '../../redux/continent/continent';
 import { setCountry } from '../../redux/country/country';
 import store from '../../redux/configureStore';
 
+import './Continents.css';
+
 const Continents = () => {
   const dispatch = useDispatch();
 
