@@ -8,6 +8,10 @@ import { setContinent } from '../../redux/continent/continent';
 import { setCountry } from '../../redux/country/country';
 import store from '../../redux/configureStore';
 
+import world from '../../assets/world.png';
+
+import './Continents.css';
+
 const Continents = () => {
   const dispatch = useDispatch();
 
@@ -30,10 +34,22 @@ const Continents = () => {
 
   return (
     <div className="countries">
+      <img
+        src={world}
+        alt="Background world."
+        style={
+          {
+            width: '100%',
+            position: 'fixed',
+            top: '35%',
+            zIndex: '1',
+          }
+        }
+      />
       <select
         value={continent}
         onChange={(e) => continentSelect(e)}
-        className="browser-default custom-select"
+        className="select-continent"
       >
         {
           continents.map(
@@ -49,10 +65,12 @@ const Continents = () => {
               className="nav-link"
               onClick={() => countrySelect(country)}
             >
-              <span>{country.name.toUpperCase()}</span>
+              <img alt={`${country.name}'s flag.`} src={country.flag} />
+              <div className="country-info-small">
+                <span>{country.name.toUpperCase()}</span>
+                <span>{`Pop: ${country.population}`}</span>
+              </div>
             </NavLink>
-            <img style={{ width: '120px', height: 'auto' }} alt={`${country.name}'s flag.`} src={country.flag} />
-            <span>{`Population: ${country.population}`}</span>
           </li>
         ))}
       </ul>

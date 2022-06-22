@@ -6,11 +6,11 @@
   justify-items: center;
   align-items: center;
   box-sizing: border-box;
-  background-color: transparent;
   position: fixed;
   top: 0;
   z-index: 3;
   padding: 10px 50px;
+  background-color: rgb(236, 76, 138);
 }
 
 .logo-container {
@@ -103,7 +103,7 @@ h1 {
     position: absolute;
     top: 45px;
     right: 0;
-    background-color: rgb(43, 59, 90);
+    background-color: rgb(90, 43, 72, 0.8);
     padding: 30px 0;
     transition: transform 0.3s ease;
   }
