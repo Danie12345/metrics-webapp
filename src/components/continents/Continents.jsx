@@ -35,7 +35,7 @@ const Continents = () => {
       <select
         value={continent}
         onChange={(e) => continentSelect(e)}
-        className="browser-default custom-select"
+        className="select-continent"
       >
         {
           continents.map(
