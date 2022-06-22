@@ -4,6 +4,8 @@ import { NavLink } from 'react-router-dom';
 import { setCountry } from '../../redux/country/country';
 import { getCurrentPollution } from '../../redux/currentPollution/currentPollution';
 
+import './Country.css';
+
 const Country = () => {
   const dispatch = useDispatch();
   const country = useSelector((state) => state.country);
