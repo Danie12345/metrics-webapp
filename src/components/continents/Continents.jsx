@@ -52,9 +52,9 @@ const Continents = () => {
               onClick={() => countrySelect(country)}
             >
               <span>{country.name.toUpperCase()}</span>
+              <img style={{ width: '120px', height: 'auto' }} alt={`${country.name}'s flag.`} src={country.flag} />
+              <span>{`Population: ${country.population}`}</span>
             </NavLink>
-            <img style={{ width: '120px', height: 'auto' }} alt={`${country.name}'s flag.`} src={country.flag} />
-            <span>{`Population: ${country.population}`}</span>
           </li>
         ))}
       </ul>
