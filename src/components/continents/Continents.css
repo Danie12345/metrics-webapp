@@ -37,6 +37,7 @@ ul.country-list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  z-index: 2;
 }
 
 li.country {
@@ -45,12 +46,12 @@ li.country {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  background-color: rgb(230, 84, 140);
+  background-color: rgb(230, 84, 140, 0.4);
   box-sizing: border-box;
   border: 1px solid rgb(255, 255, 255, 0.05);
 }
 
-li.country:hover {
+li.country:active {
   -webkit-tap-highlight-color: rgb(236, 76, 138, 1);
 }
 

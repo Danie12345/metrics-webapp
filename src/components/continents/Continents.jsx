@@ -8,6 +8,8 @@ import { setContinent } from '../../redux/continent/continent';
 import { setCountry } from '../../redux/country/country';
 import store from '../../redux/configureStore';
 
+import world from '../../assets/world.png';
+
 import './Continents.css';
 
 const Continents = () => {
@@ -32,6 +34,18 @@ const Continents = () => {
 
   return (
     <div className="countries">
+      <img
+        src={world}
+        alt="Background world."
+        style={
+          {
+            width: '100%',
+            position: 'fixed',
+            top: '35%',
+            zIndex: '1',
+          }
+        }
+      />
       <select
         value={continent}
         onChange={(e) => continentSelect(e)}
