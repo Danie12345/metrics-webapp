@@ -20,10 +20,10 @@ const Country = () => {
   };
   const status = {
     1: ['Good', '#0f0'],
-    2: ['Moderate', '#66ff00'],
-    3: ['Unhealthy', '#eeff00'],
-    4: ['Very Unhealthy', '#ff7300'],
-    5: ['Hazardous', '#ff2600'],
+    2: ['Fair', '#66ff00'],
+    3: ['Moderate', '#eeff00'],
+    4: ['Poor', '#ff7300'],
+    5: ['Very Poor', '#ff0000'],
   };
 
   useEffect(() => {
@@ -32,7 +32,7 @@ const Country = () => {
 
   return (
     <div className="country">
-      <div>
+      <div className="return">
         <NavLink
           to="/continents"
           onClick={back}
@@ -62,12 +62,26 @@ const Country = () => {
                 {`${pollution.index}: ${status[pollution.index][0]}`}
               </span>
               <ul className="compounds">
-                {Object.keys(pollution.composition).map((key) => (
-                  <li className="compound" key={key}>
-                    <span>{key}</span>
-                    <span>{pollution.composition[key]}</span>
-                  </li>
-                ))}
+                {Object.keys(pollution.composition).map((key) => {
+                  const compound = key.replace('_', '.');
+                  const cmpndName = compound.replace(/[0-9]/g, '').replace('.', '').toUpperCase();
+                  const cmpndNumb = compound.replace(/[a-z]/g, '');
+                  return (
+                    <li className="compound" key={key}>
+                      <span>
+                        {cmpndName}
+                        <sub>{cmpndNumb}</sub>
+                      </span>
+                      <span>
+                        {pollution.composition[key]}
+                        <small>
+                          &#181;g/m
+                          <sup>3</sup>
+                        </small>
+                      </span>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           )

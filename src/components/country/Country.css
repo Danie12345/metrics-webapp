@@ -6,6 +6,18 @@
   gap: 40px;
   font-weight: 500;
   color: white;
+  margin-bottom: 48px;
+}
+
+.return {
+  width: 100%;
+  padding: 0 8px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.country-path {
+  width: auto;
 }
 
 .data {
@@ -26,23 +38,38 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 8px;
+}
+
+span.status {
+  box-sizing: border-box;
+  padding: 3px;
+  border-radius: 2px;
+  background-color: #00000050;
+  font-weight: 900;
 }
 
 .compounds {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   width: 100%;
-  height: max-content;
-  gap: 8px;
+  height: auto;
 }
 
 .compound {
   width: 48.43%;
-  height: 40px;
+  box-sizing: border-box;
+  padding: 3%;
+  position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 12px;
+  text-align: center;
+  background-color: rgb(223, 101, 97, 0.5);
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .compound span {
@@ -51,6 +78,10 @@
   width: 100%;
 }
 
-.compound span:nth-child(odd) {
-  text-align: end;
+.compound:nth-child(4n-3) {
+  background-color: rgb(230, 88, 84, 0.5);
+}
+
+.compound:nth-child(4n+4) {
+  background-color: rgb(230, 88, 84, 0.5);
 }
