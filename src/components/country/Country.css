@@ -2,5 +2,55 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
+  gap: 40px;
+  font-weight: 500;
+  color: white;
+}
+
+.data {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  gap: 8px;
+  align-items: center;
+}
+
+.country-flag {
+  width: 120px;
+  height: auto;
+  border-radius: 6px;
+}
+
+.pollution-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.compounds {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: max-content;
+  gap: 8px;
+}
+
+.compound {
+  width: 48.43%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.compound span {
+  font-weight: 600;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.compound span:nth-child(odd) {
+  text-align: end;
 }

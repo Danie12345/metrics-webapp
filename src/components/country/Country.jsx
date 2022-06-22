@@ -42,29 +42,33 @@ const Country = () => {
         </NavLink>
         <span className="country-path">{` > ${country.name}`}</span>
       </div>
-      <div style={{ display: 'flex', flexDirection: 'column' }}>
-        <span>{country.name}</span>
+      <div
+        className="data"
+        style={
+          { display: 'flex', flexDirection: 'column' }
+        }
+      >
         <span>{`Population: ${country.population}`}</span>
-        <img style={{ width: '120px', height: 'auto' }} alt={`${country.name}'s flag.`} src={country.flag} />
+        <img className="country-flag" alt={`${country.name}'s flag.`} src={country.flag} />
         {pollution && Object.keys(pollution).length > 0
           ? (
-            <div>
-              <div>
-                <span
-                  style={{
-                    color: status[pollution.index][1],
-                  }}
-                >
-                  {pollution.index}
-                </span>
+            <div className="pollution-data">
+              <span
+                className="status"
+                style={{
+                  color: status[pollution.index][1],
+                }}
+              >
+                {`${pollution.index}: ${status[pollution.index][0]}`}
+              </span>
+              <ul className="compounds">
                 {Object.keys(pollution.composition).map((key) => (
-                  <div key={key}>
+                  <li className="compound" key={key}>
                     <span>{key}</span>
-                    {' '}
                     <span>{pollution.composition[key]}</span>
-                  </div>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
           )
           : ''}
