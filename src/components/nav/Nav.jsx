@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
-const logo = require('../../assets/logo.png');
+import { setCountry } from '../../redux/country/country';
 import './Nav.css';
+
+const logo = require('../../assets/logo.png');
 
 const Nav = () => {
   const dispatch = useDispatch();
@@ -36,7 +38,7 @@ const Nav = () => {
             <NavLink
               to={link.path}
               className="nav-link"
-              onClick={() => { countrySelect(''); }}
+              onClick={() => { countrySelect({}); }}
             >
               <span>{link.text.toUpperCase()}</span>
             </NavLink>

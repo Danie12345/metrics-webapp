@@ -9,8 +9,10 @@ body {
   background-color: rgb(67, 105, 178);
 }
 
-a {
+a,
+NavLink {
   text-decoration: none;
+  color: unset;
 }
 
 ul,
