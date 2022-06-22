@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { setCountry } from '../../redux/country/country';
 import { getCurrentPollution, removePollutionData } from '../../redux/currentPollution/currentPollution';
+import Loading from '../loading/Loading';
 
 import './Country.css';
 
@@ -28,6 +29,7 @@ const Country = () => {
 
   useEffect(() => {
     dispatch(getCurrentPollution);
+    dispatch(removePollutionData);
   }, []);
 
   return (
@@ -85,7 +87,7 @@ const Country = () => {
               </ul>
             </div>
           )
-          : ''}
+          : (<Loading />)}
       </div>
     </div>
   );
