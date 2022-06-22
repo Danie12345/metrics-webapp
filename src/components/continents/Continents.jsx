@@ -6,7 +6,6 @@ import unidecode from 'unidecode';
 import { getCountries } from '../../redux/continentCountries/continentCountries';
 import { setContinent } from '../../redux/continent/continent';
 import { setCountry } from '../../redux/country/country';
-// import Country from '../country/Country';
 import store from '../../redux/configureStore';
 
 const Continents = () => {
@@ -28,6 +27,7 @@ const Continents = () => {
     getCountries(dispatch, store.getState, continent);
     setCountry(dispatch, {});
   }, []);
+
   return (
     <div className="countries">
       <select
@@ -50,8 +50,9 @@ const Continents = () => {
               onClick={() => countrySelect(country)}
             >
               <span>{country.name.toUpperCase()}</span>
-              <img style={{ width: '120px', height: 'auto' }} alt={`${country.name}'s flag.`} src={country.flag} />
             </NavLink>
+            <img style={{ width: '120px', height: 'auto' }} alt={`${country.name}'s flag.`} src={country.flag} />
+            <span>{`Population: ${country.population}`}</span>
           </li>
         ))}
       </ul>
