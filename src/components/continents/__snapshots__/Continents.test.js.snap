@@ -1,0 +1,194 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Continents Component maintains the snapshots between renders 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="countries"
+      >
+        <img
+          alt="Background world."
+          src="world.png"
+          style="width: 100%; position: fixed; top: 35%; z-index: 1;"
+        />
+        <select
+          class="select-continent"
+        >
+          <option
+            value="Africa"
+          >
+            Africa
+          </option>
+          <option
+            value="Americas"
+          >
+            Americas
+          </option>
+          <option
+            value="Asia"
+          >
+            Asia
+          </option>
+          <option
+            value="Europe"
+          >
+            Europe
+          </option>
+          <option
+            value="Oceania"
+          >
+            Oceania
+          </option>
+        </select>
+        <ul
+          class="country-list"
+        >
+          <li
+            class="country"
+          >
+            <a
+              class="nav-link"
+              href="/continents/country/Zimbabwe"
+            >
+              <img
+                alt="Zimbabwe's flag."
+                src="some svg link"
+              />
+              <div
+                class="country-info-small"
+              >
+                <span>
+                  ZIMBABWE
+                </span>
+                <span>
+                  Pop: 100000
+                </span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="countries"
+    >
+      <img
+        alt="Background world."
+        src="world.png"
+        style="width: 100%; position: fixed; top: 35%; z-index: 1;"
+      />
+      <select
+        class="select-continent"
+      >
+        <option
+          value="Africa"
+        >
+          Africa
+        </option>
+        <option
+          value="Americas"
+        >
+          Americas
+        </option>
+        <option
+          value="Asia"
+        >
+          Asia
+        </option>
+        <option
+          value="Europe"
+        >
+          Europe
+        </option>
+        <option
+          value="Oceania"
+        >
+          Oceania
+        </option>
+      </select>
+      <ul
+        class="country-list"
+      >
+        <li
+          class="country"
+        >
+          <a
+            class="nav-link"
+            href="/continents/country/Zimbabwe"
+          >
+            <img
+              alt="Zimbabwe's flag."
+              src="some svg link"
+            />
+            <div
+              class="country-info-small"
+            >
+              <span>
+                ZIMBABWE
+              </span>
+              <span>
+                Pop: 100000
+              </span>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
