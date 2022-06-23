@@ -24,6 +24,8 @@ export default function reducer(state = {}, action) {
   switch (action.type) {
     case GET_POLLUTION:
       return action.payload;
+    case CLEAR:
+      return {};
     default:
       return state;
   }

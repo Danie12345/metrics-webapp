@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const airPollutionURL = 'http://api.openweathermap.org/data/2.5';
+const airPollutionURL = 'https://api.openweathermap.org/data/2.5';
 const airPollutionKey = 'aafa8bdb6721fd796e15393dd7b376bf';
 const getCountriesURL = 'https://restcountries.com/v3.1';
 
