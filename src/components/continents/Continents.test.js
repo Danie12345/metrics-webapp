@@ -1,51 +1,97 @@
-import {
-  render, screen, waitFor, fireEvent, act,
-} from '@testing-library/react';
-import { Provider } from 'react-redux';
 import Continents from './Continents';
-import store from '../../redux/configureStore';
-import { getCountries } from '../../http-common';
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, MemoryRouter } from "react-router-dom";
+import { screen, render } from '../../mocks/test-utils';
+import userEvent from '@testing-library/user-event';
+import '@testing-library/jest-dom'
+
+import { rest } from 'msw';
+import { setupServer } from 'msw/node';
 
 
-jest.mock('../../http-common');
+const handlers = [
+  rest.get(/africa/i, (req, res, ctx) =>{
+    return res(
+      ctx.status(200),
+      ctx.json(
+        [
+          {
+            "flags": {
+              "svg": "algo"
+            },
+            "name": {
+              "common": "Zimbabwe"
+            },
+            "latlng": [
+              37.0,
+              127.5
+            ],
+            "population": 69420,
+            "region": 'Africa'
+          }
+        ]
+      )
+    )
+  }),
+  rest.get(/americas/i, (req, res, ctx) =>{
+    return res(
+      ctx.status(200),
+      ctx.json(
+        [
+          {
+            "flags": {
+              "svg": "algo"
+            },
+            "name": {
+              "common": "Mexico"
+            },
+            "latlng": [
+              37.0,
+              127.5
+            ],
+            "population": 69420,
+            "region": 'Africa'
+          }
+        ]
+      )
+    )
+  }),
+]
+const server = setupServer(...handlers )
 
-const fetch = async () => {
-  const state = {
-    data: [
-      {
-        name: {common: 'Zimbabwe'},
-        region: 'Africa',
-        coords: [12, 42],
-        population: 100000,
-        flags: {svg: 'some svg link'},
-      }
-    ],
-  };
-  await getCountries.get.mockResolvedValue(state);
-}
 
 describe('Continents Component', () => {
-  beforeEach(async () => {
-    fetch();
+  beforeEach(() => {
+    server.listen();
   });
 
   afterEach(() => {
-    act(() => store.dispatch({
-      type: 'metrics/continent/SET_CONTINENT',
-      payload: 'Africa',
-    }));
+    server.resetHandlers();
   });
 
-  it('renders correctly', async () => {
-    render(<Provider store={store}><BrowserRouter><Continents /></BrowserRouter></Provider>);
-    await waitFor(() => {
-      expect(screen.getAllByText('Africa').length).toBeGreaterThan(0);
-    });
+  afterAll(() => {
+    server.close();
   });
 
-  it('maintains the snapshots between renders', async () => {
-    const tree = render(<Provider store={store}><BrowserRouter><Continents /></BrowserRouter></Provider>);
-    await expect(tree).toMatchSnapshot();
+  it('renders correctly', () => {
+    render(<BrowserRouter><Continents /></BrowserRouter>);
+    expect(screen.getAllByText('Africa').length).toBeGreaterThan(0);
+  });
+
+  it('renders another continent with countries', async () => {
+    const user = userEvent.setup()
+    render(<MemoryRouter initialEntries={['/continents']}><Continents /></MemoryRouter>);
+    const continent1 = screen.getByText('Africa');
+    const select = await screen.findByRole('combobox')
+    await user.click(continent1);
+    const continent2 = screen.getByText('Americas');
+    await user.selectOptions(select, continent2);
+
+    const mexico = screen.getByText(/mexico/i);
+    expect(mexico).toBeInTheDocument();
+  });
+
+  it('maintains the snapshots between renders', () => {
+    const tree = render(<BrowserRouter><Continents /></BrowserRouter>);
+    expect(tree).toMatchSnapshot();
   });
 });
