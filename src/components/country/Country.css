@@ -1,4 +1,4 @@
-.country {
+.country-info {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -14,6 +14,14 @@
   padding: 0 8px;
   box-sizing: border-box;
   text-align: center;
+  line-height: 150%;
+}
+
+.continent-btn {
+  box-sizing: border-box;
+  padding: 4px;
+  border-radius: 3px;
+  background-color: rgb(139, 0, 0, 0.4);
 }
 
 .country-path {
@@ -43,9 +51,9 @@
 
 span.status {
   box-sizing: border-box;
-  padding: 3px;
-  border-radius: 2px;
-  background-color: #00000050;
+  padding: 4px;
+  border-radius: 8px;
+  background-color: #000000aa;
   font-weight: 900;
 }
 

@@ -33,14 +33,13 @@ const Country = () => {
   }, []);
 
   return (
-    <div className="country">
+    <div className="country-info">
       <div className="return">
         <NavLink
           to="/continents"
           onClick={back}
-          className="back-link"
         >
-          <span>{`Back to ${continent}`}</span>
+          <span className="continent-btn">{continent}</span>
         </NavLink>
         <span className="country-path">{` > ${country.name}`}</span>
       </div>
