@@ -6,12 +6,19 @@ body {
   padding: 0;
   overflow-x: hidden;
   font-family: 'Montserrat', sans-serif;
-  background-color: rgb(67, 105, 178);
+  background-color: rgb(236, 76, 138);
 }
 
-a {
+a,
+a:hover,
+a:active,
+a:focus,
+a:visited,
+a:link {
   text-decoration: none;
   color: unset;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0;
 }
 
 ul,
