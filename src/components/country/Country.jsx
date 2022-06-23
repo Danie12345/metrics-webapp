@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { setCountry } from '../../redux/country/country';
 import { getCurrentPollution, removePollutionData } from '../../redux/currentPollution/currentPollution';
+import Damage from '../damage/Damage';
 import Loading from '../loading/Loading';
 
 import './Country.css';
@@ -88,6 +89,9 @@ const Country = () => {
           )
           : (<Loading />)}
       </div>
+      {pollution && Object.keys(pollution).length > 0
+        ? <Damage intensity={parseInt(pollution.index, 10)} color={status[pollution.index][1]} />
+        : <></>}
     </div>
   );
 };
