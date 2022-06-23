@@ -28,7 +28,7 @@ const Nav = () => {
   return (
     <nav className="navBar">
       <div className="logo-container">
-        <img src={logo} alt="Cool logo." className="logo-img" width="100%" height="auto" />
+        <img src={logo} alt="Cool logo." className="logo-img" />
         <h1>Air Pollution Ranks</h1>
       </div>
       {openMenu ? (<AiOutlineClose onClick={() => toggleMenu()} className="menu-icon" />) : (<AiOutlineMenu onClick={() => toggleMenu()} className="menu-icon" />)}

@@ -10,12 +10,18 @@
   position: fixed;
   top: 0;
   z-index: 3;
-  padding: 10px 50px;
+  padding: 0 50px;
+  background-color: rgb(236, 76, 138);
 }
 
 .logo-container {
   display: flex;
   align-items: center;
+}
+
+.logo-img {
+  width: 30px;
+  height: 30px;
 }
 
 h1 {
@@ -48,18 +54,13 @@ h1 {
   letter-spacing: 1.9px;
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 1024px) {
   .navBar {
     padding: 0 30px;
   }
 
   h1 {
     font-size: 18px;
-  }
-
-  .logo-img {
-    width: 40px;
-    height: 40px;
   }
 
   .nav-link {
@@ -70,9 +71,7 @@ h1 {
   .navUl > li:last-of-type {
     padding-left: 5px;
   }
-}
-
-@media screen and (max-width: 768px) {
+  
   .navUl {
     display: none;
   }
