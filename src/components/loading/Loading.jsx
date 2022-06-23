@@ -1,7 +1,11 @@
-import loading from '../../assets/loading.svg';
+import './Loading.css';
 
 const Loading = () => (
-  <img src={loading} alt="Loading" />
+  <div className="container">
+    <div className="slideshow">
+      <div className="imgslide" />
+    </div>
+  </div>
 );
 
 export default Loading;
