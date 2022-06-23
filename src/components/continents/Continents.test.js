@@ -2,11 +2,10 @@ import Continents from './Continents';
 import { BrowserRouter, MemoryRouter } from "react-router-dom";
 import { screen, render } from '../../mocks/test-utils';
 import userEvent from '@testing-library/user-event';
-import '@testing-library/jest-dom'
+import '@testing-library/jest-dom';
 
 import { rest } from 'msw';
 import { setupServer } from 'msw/node';
-
 
 const handlers = [
   rest.get(/africa/i, (req, res, ctx) =>{
@@ -55,9 +54,9 @@ const handlers = [
       )
     )
   }),
-]
-const server = setupServer(...handlers )
+];
 
+const server = setupServer(...handlers );
 
 describe('Continents Component', () => {
   beforeEach(() => {
@@ -81,17 +80,11 @@ describe('Continents Component', () => {
     const user = userEvent.setup()
     render(<MemoryRouter initialEntries={['/continents']}><Continents /></MemoryRouter>);
     const continent1 = screen.getByText('Africa');
-    const select = await screen.findByRole('combobox')
+    const select = await screen.findByRole('combobox');
     await user.click(continent1);
     const continent2 = screen.getByText('Americas');
     await user.selectOptions(select, continent2);
-
     const mexico = screen.getByText(/mexico/i);
     expect(mexico).toBeInTheDocument();
-  });
-
-  it('maintains the snapshots between renders', () => {
-    const tree = render(<BrowserRouter><Continents /></BrowserRouter>);
-    expect(tree).toMatchSnapshot();
   });
 });
