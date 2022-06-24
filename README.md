@@ -16,7 +16,7 @@
 - Gitflow
 
 ## Live Demos
-- [Netlify](https://62b0e11710168b120ba04087--strong-croquembouche-21dba9.netlify.app/)
+- [Netlify](https://strong-croquembouche-21dba9.netlify.app/)
 
 
 ## Getting Started
