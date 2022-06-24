@@ -2,10 +2,9 @@ import {
   BrowserRouter, MemoryRouter, Routes, Route,
 } from 'react-router-dom';
 import userEvent from '@testing-library/user-event';
-import Continents from '../continents/Continents';
 import Country from './Country';
 import {
-  screen, render, act, prettyDOM,
+  screen, render,
 } from '../../mocks/test-utils';
 import '@testing-library/jest-dom';
 
