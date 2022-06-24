@@ -6,17 +6,19 @@
 
 
 ## Built With
-- React
-- Redux
+- React & Redux
 - Jest and react-testing-library
 - Axios
 - OpenWeatherMap's Air Pollution API
 - REST Countries API
-- Netlify
 - Gitflow
+- Deployed with Netlify & Heroku
 
 ## Live Demos
 - [Netlify](https://strong-croquembouche-21dba9.netlify.app/)
+- [Heroku](https://air-pollution-ranks.herokuapp.com/)
+
+![](src\assets\mock.PNG)
 
 
 ## Getting Started
