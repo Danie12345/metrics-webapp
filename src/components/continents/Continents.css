@@ -34,6 +34,24 @@
   background-color: rgb(139, 0, 0);
 }
 
+.search-filter {
+  border: none;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 4px;
+  background-color: rgb(192, 62, 62, 0.3);
+  outline: none;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+}
+
+.search-filter::placeholder {
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+}
+
 ul.country-list {
   display: flex;
   flex-direction: row;
