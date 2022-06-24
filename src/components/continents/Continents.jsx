@@ -8,6 +8,8 @@ import { setContinent } from '../../redux/continent/continent';
 import { setCountry } from '../../redux/country/country';
 import store from '../../redux/configureStore';
 
+import Loading from '../loading/Loading';
+
 import world from '../../assets/world.png';
 
 import './Continents.css';
@@ -72,9 +74,9 @@ const Continents = () => {
           )
         }
       </select>
-      <input value={query} placeholder="Search..." onChange={(e) => setQuery(e.target.value)} />
+      <input className="search-filter" value={query} placeholder="Search..." onChange={(e) => setQuery(e.target.value)} />
       <ul className="country-list">
-        {searchedCountries.length > 0 ? searchedCountries.map((country) => (
+        {searchedCountries && searchedCountries.map((country) => (
           <li className="country" key={country.name}>
             <NavLink
               to={`/continents/country/${unidecode(country.name.replace(/ /gi, '-'))}`}
@@ -88,7 +90,8 @@ const Continents = () => {
               </div>
             </NavLink>
           </li>
-        )) : <>No countries found :C</>}
+        ))}
+        {countries.length ? '' : <Loading />}
       </ul>
     </div>
   );
