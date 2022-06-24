@@ -6,6 +6,8 @@ import { setCountry } from '../../redux/country/country';
 import './Nav.css';
 
 const logo = require('../../assets/logo.png');
+const github = require('../../assets/github.png');
+const linkedin = require('../../assets/linkedin.png');
 
 const Nav = () => {
   const dispatch = useDispatch();
@@ -54,6 +56,14 @@ const Nav = () => {
             </NavLink>
           </li>
         ))}
+        <li className="socials">
+          <a className="socials-link" href="https://github.com/Danie12345">
+            <img style={{ zIndex: 100, width: '24px', height: 'auto' }} src={github} alt="My Github" />
+          </a>
+          <a className="socials-link" href="https://linkedin.com/in/daniel-malo">
+            <img style={{ zIndex: 100, width: '24px', height: 'auto' }} src={linkedin} alt="My LinkedIn" />
+          </a>
+        </li>
       </ul>
     </nav>
   );
