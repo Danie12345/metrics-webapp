@@ -12,6 +12,7 @@ async function getCurrentPollution(dispatch, getState) {
     ...data.coord,
     composition: data.list[0].components,
     index: data.list[0].main.aqi,
+    dt: data.list[0].dt,
   };
   dispatch({ type: GET_POLLUTION, payload });
 }
