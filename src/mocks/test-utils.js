@@ -1,9 +1,9 @@
-// test-utils.jsx
+/* eslint-disable */
 import React from 'react';
 import { render as rtlRender } from '@testing-library/react';
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
-// Import your own reducer
+
 import pollution from '../redux/currentPollution/currentPollution';
 import countries from '../redux/continentCountries/continentCountries';
 import continent from '../redux/continent/continent';

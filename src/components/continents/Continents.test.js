@@ -1,12 +1,12 @@
-import Continents from './Continents';
 import { BrowserRouter, MemoryRouter } from 'react-router-dom';
-import { screen, render, fireEvent } from '../../mocks/test-utils';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 
 import { setupServer } from 'msw/node';
+import { screen, render } from '../../mocks/test-utils';
+import Continents from './Continents';
 
-import { handlers } from '../../mocks/handlers';
+import handlers from '../../mocks/handlers';
 
 const server = setupServer(...handlers);
 

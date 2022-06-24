@@ -1,16 +1,16 @@
+import { setupServer } from 'msw/node';
 import {
   BrowserRouter, MemoryRouter, Routes, Route,
 } from 'react-router-dom';
 import userEvent from '@testing-library/user-event';
-import Country from './Country';
 import {
   screen, render,
 } from '../../mocks/test-utils';
 import '@testing-library/jest-dom';
 
-import { setupServer } from 'msw/node';
+import Country from './Country';
 
-import { handlers } from '../../mocks/handlers';
+import handlers from '../../mocks/handlers';
 
 const server = setupServer(...handlers);
 

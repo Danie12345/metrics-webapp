@@ -1,6 +1,6 @@
 import { rest } from 'msw';
 
-export const handlers = [
+const handlers = [
   rest.get(/africa/i, (req, res, ctx) => res(
     ctx.status(200),
     ctx.json(
@@ -73,3 +73,5 @@ export const handlers = [
     ),
   )),
 ];
+
+export default handlers;
