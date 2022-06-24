@@ -1,6 +1,6 @@
 .navBar {
   width: 100%;
-  max-width: 1024px;
+  max-width: 768px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -11,7 +11,7 @@
   position: fixed;
   top: 0;
   z-index: 3;
-  padding: 10px 50px;
+  padding: 10px 20px;
   background-color: rgb(236, 76, 138);
 }
 
@@ -64,6 +64,7 @@ h1 {
   padding: 0%;
   display: flex;
   flex-wrap: wrap;
+  color: white;
 }
 
 .nav-link {
