@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import unidecode from 'unidecode';
@@ -14,9 +14,10 @@ import './Continents.css';
 
 const Continents = () => {
   const dispatch = useDispatch();
-
   const countries = useSelector((state) => state.countries);
   const continent = useSelector((state) => state.continent);
+  const [searchedCountries, setSearchedCountries] = useState([]);
+  const [query, setQuery] = useState('');
   const continents = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
   const continentSelect = (e) => {
     setCountry(dispatch, {});
@@ -26,11 +27,25 @@ const Continents = () => {
   const countrySelect = (country) => {
     setCountry(dispatch, country);
   };
+  const filterSearch = (str) => {
+    if (str === '') {
+      return countries;
+    }
+    return countries.filter((country) => `${country.population}`.includes(parseInt(str, 10))
+      || `${country.coords}`.includes(parseInt(str, 10))
+      || unidecode(`${country.name}`).toLowerCase().includes(unidecode(str)));
+  };
+
+  useEffect(() => {
+    setCountry(dispatch, {});
+    setSearchedCountries(filterSearch(query));
+  }, [countries, query]);
 
   useEffect(() => {
     getCountries(dispatch, store.getState, continent);
     setCountry(dispatch, {});
-  }, []);
+    setSearchedCountries(filterSearch(query));
+  }, [continent]);
 
   return (
     <div className="countries">
@@ -57,8 +72,9 @@ const Continents = () => {
           )
         }
       </select>
+      <input value={query} placeholder="Search..." onChange={(e) => setQuery(e.target.value)} />
       <ul className="country-list">
-        {countries && countries.map((country) => (
+        {searchedCountries.length > 0 ? searchedCountries.map((country) => (
           <li className="country" key={country.name}>
             <NavLink
               to={`/continents/country/${unidecode(country.name.replace(/ /gi, '-'))}`}
@@ -72,7 +88,7 @@ const Continents = () => {
               </div>
             </NavLink>
           </li>
-        ))}
+        )) : <>No countries found :C</>}
       </ul>
     </div>
   );
