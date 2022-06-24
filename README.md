@@ -9,8 +9,8 @@
 - React & Redux
 - Jest and react-testing-library
 - Axios
-- OpenWeatherMap's Air Pollution API
-- REST Countries API
+- OpenWeatherMap's [Air Pollution API](https://openweathermap.org/api/air-pollution)
+- [REST Countries API](https://restcountries.com/)
 - Gitflow
 - Deployed with Netlify & Heroku
 
@@ -18,7 +18,7 @@
 - [Netlify](https://strong-croquembouche-21dba9.netlify.app/)
 - [Heroku](https://air-pollution-ranks.herokuapp.com/)
 
-![](src\assets\mock.PNG)
+![Preview image](src/assets/mock.PNG)
 
 
 ## Getting Started
@@ -60,6 +60,7 @@ Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues](https://github.com/Danie12345/metrics-webapp/issues) page.
 
+## [Template on Behance](https://www.behance.net/gallery/31579789/Ballhead-App-%28Free-PSDs%29) by [Nelson Sakwa](https://www.behance.net/sakwadesignstudio)
 
 ## Show your support
 Give a ⭐️ if you like this project!
