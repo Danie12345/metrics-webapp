@@ -12,7 +12,18 @@ import country from '../redux/country/country';
 function render(
   ui,
   {
-    preloadedState,
+    preloadedState = {
+      country: {
+        name: 'Zimbabwe',
+        region: 'Africa',
+        coords: [
+          -20,
+          30,
+        ],
+        population: 14862927,
+        flag: 'https://flagcdn.com/zw.svg',
+      },
+    },
     store = configureStore({
       reducer: {
         pollution,
