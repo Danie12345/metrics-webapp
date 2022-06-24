@@ -3,10 +3,9 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  gap: 40px;
+  gap: 32px;
   font-weight: 500;
   color: white;
-  margin-bottom: 48px;
 }
 
 .return {
@@ -34,6 +33,10 @@
   width: 80%;
   gap: 8px;
   align-items: center;
+}
+
+.datetime {
+  font-size: 10px;
 }
 
 .country-flag {

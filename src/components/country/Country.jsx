@@ -50,6 +50,7 @@ const Country = () => {
           { display: 'flex', flexDirection: 'column' }
         }
       >
+        <span className="datetime">{new Date(pollution.dt * 1000).toLocaleString()}</span>
         <span>{`Population: ${country.population}`}</span>
         <img className="country-flag" alt={`${country.name}'s flag.`} src={country.flag} />
         {pollution && Object.keys(pollution).length > 0
